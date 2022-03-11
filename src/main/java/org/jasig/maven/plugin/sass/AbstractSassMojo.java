@@ -71,6 +71,18 @@ public abstract class AbstractSassMojo extends AbstractMojo {
      */
     protected List<Resource> resources;
 
+
+    /**
+     * Sources as airline ID s for compilation with their destination directory containing SASS files. Allows
+     * for comma separated airline ids which are also the css directory names . If specified it precludes the direct
+     * specification of sassSourceDirectory/relativeOutputDirectory/destination parameters.
+     
+     *
+     * @parameter
+     */
+    protected String airlines;
+
+
     /**
      * Defines paths where jruby will look for gems. E.g. a maven build could download
      * gems into ${project.build.directory}/rubygems and a gemPath pointed to this
@@ -311,6 +323,15 @@ public abstract class AbstractSassMojo extends AbstractMojo {
             }
             if (this.excludes != null) {
                 resource.source.setExcludes(Arrays.asList(this.excludes));
+            }
+            if(this.airlines !=null){
+                List<String> airlinesList=Arrays.asList(this.airlines.split(","));
+                List<String> upperCaseAirlines= new ArrayList<String>();
+                for  (String airline : airlinesList){
+                    upperCaseAirlines.add(airline.toUpperCase());
+                }
+                resource.source.setIncludes(airlinesList);
+                resource.source.setIncludes(upperCaseAirlines);
             }
             resource.relativeOutputDirectory = this.relativeOutputDirectory;
             resource.destination = this.destination;
