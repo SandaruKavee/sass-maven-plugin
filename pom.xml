@@ -8,18 +8,18 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.jasig.maven</groupId>
-    <artifactId>sass-maven-plugin</artifactId>
+    <groupId>avtra.airline.san</groupId>
+    <artifactId>sass-maven-plugin-extended-for-airlines</artifactId>
     <version>1.1.2-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
-    <name>SASS Compiler Plugin</name>
+    <name>SASS Compiler Plugin for Airline Sass</name>
     <description>Maven Plugin that compiles SASS files</description>
     
     <scm>
-        <connection>scm:git:git://github.com/Jasig/sass-maven-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:Jasig/sass-maven-plugin.git</developerConnection>
-        <url>https://github.com/Jasig/sass-maven-plugin</url>
+        <connection>scm:git:git://github.com/SandaruKavee/sass-maven-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:SandaruKavee/sass-maven-plugin.git</developerConnection>
+        <url>https://github.com/SandaruKavee/sass-maven-plugin.git</url>
     </scm>
     
     <properties>
