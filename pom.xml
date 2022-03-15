@@ -9,8 +9,8 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>avtra.airline.san</groupId>
-    <artifactId>sass-maven-plugin-extended-for-airlines</artifactId>
-    <version>1.1.2-SNAPSHOT</version>
+    <artifactId>extended-sass-maven-plugin</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <name>SASS Compiler Plugin for Airline Sass</name>

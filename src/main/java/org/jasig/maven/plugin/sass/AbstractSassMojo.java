@@ -78,7 +78,7 @@ public abstract class AbstractSassMojo extends AbstractMojo {
      * specification of sassSourceDirectory/relativeOutputDirectory/destination parameters.
      
      *
-     * @parameter
+     * @parameter property = "airlines"
      */
     protected String airlines;
 
