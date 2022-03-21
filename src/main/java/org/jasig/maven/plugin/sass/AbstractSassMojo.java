@@ -329,8 +329,9 @@ public abstract class AbstractSassMojo extends AbstractMojo {
                 List<String> upperCaseAirlines= new ArrayList<String>();
                 List<String> lowerCaseAirlines= new ArrayList<String>();
                 for  (String airline : airlinesList){
-                    upperCaseAirlines.add("**/"+airline.toUpperCase()+"/**");
-                    lowerCaseAirlines.add("**/"+airline.toString()+"/**");
+                    upperCaseAirlines.add(airline.toUpperCase());
+                    lowerCaseAirlines.add(airline.toString());
+                    log.info(airline.toString());
                 }
                 resource.source.setIncludes(lowerCaseAirlines);
                 resource.source.setIncludes(upperCaseAirlines);
