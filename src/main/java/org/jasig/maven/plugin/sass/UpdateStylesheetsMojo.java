@@ -40,6 +40,8 @@ public class UpdateStylesheetsMojo extends AbstractSassMojo {
         final String sassScript = sassBuilder.toString();
 
         // ...and execute
+        getLog().info("execution started");
         executeSassScript(sassScript);
+        getLog().info("execution stopped");
     }
 }

@@ -38,6 +38,7 @@ import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugin.logging.Log;
+import org.apache.maven.plugins.annotations.Parameter;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -88,7 +89,7 @@ public abstract class AbstractSassMojo extends AbstractMojo {
      * gems into ${project.build.directory}/rubygems and a gemPath pointed to this
      * directory. Finally, individual gems can be loaded via the &lt;gems> configuration.
      *
-     * @parameter default-value="${project.build.directory}/rubygems"
+     * @parameter default-value="${project.build.directory}\\rubygems"
      */
     protected String[] gemPaths = new String[0];
 
@@ -152,6 +153,7 @@ public abstract class AbstractSassMojo extends AbstractMojo {
      * @parameter default-value="${basedir}/src/main/webapp" 
      * @required
      */
+    @Parameter(property="sassSourceDirectory")
     protected File sassSourceDirectory;
     
     /**
@@ -161,6 +163,7 @@ public abstract class AbstractSassMojo extends AbstractMojo {
      *
      * @parameter
      */
+    @Parameter(property="includes")
     protected String[] includes = new String[] { "**/scss" };
  
     /**
@@ -168,6 +171,7 @@ public abstract class AbstractSassMojo extends AbstractMojo {
      *
      * @parameter
      */
+    @Parameter(property="excludes")
     protected String[] excludes;
     
     /**
@@ -200,6 +204,7 @@ public abstract class AbstractSassMojo extends AbstractMojo {
         try {
             CompilerCallback compilerCallback = new CompilerCallback(log);
             jruby.getBindings(ScriptContext.ENGINE_SCOPE).put("compiler_callback", compilerCallback);
+            log.debug("before execution");
             jruby.eval(sassScript);
             if (failOnError && compilerCallback.hadError()) {
                 throw new MojoFailureException("SASS compilation encountered errors (see above for details).");

@@ -76,6 +76,14 @@
             <scope>provided</scope>
             <type>gem</type>
         </dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.maven.plugin-tools/maven-plugin-annotations -->
+    <dependency>
+        <groupId>org.apache.maven.plugin-tools</groupId>
+        <artifactId>maven-plugin-annotations</artifactId>
+        <version>3.6.4</version>
+        <scope>provided</scope>
+    </dependency>
+
     </dependencies>
 
     <build>
@@ -148,13 +156,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-plugin-plugin</artifactId>
-                <version>3.4</version>
+                <version>2.9</version>
             </plugin>
             <!-- Downloads and installs the required Ruby Gems -->
             <plugin>
                 <groupId>de.saumya.mojo</groupId>
                 <artifactId>gem-maven-plugin</artifactId>
-                <version>2.0.1</version>
+                <version>2.0.1</version>   <!--changed the version from [0.29.4) because [ERROR] Plugin de.saumya.mojo:gem-maven-plugin:[0.29.4) or one of its dependencies could not be resolved: de.saumya.mojo:gem-maven-plugin:jar:[0.29.4) was not found in https://repo.maven.apache.org/maven2 during a previous attempt. This failure was cached in the local repository and resolution is not reattempted until the update interval of central has elapsed or updates are forced -->
                 <executions>
                     <execution>
                         <id>install-gems</id>
