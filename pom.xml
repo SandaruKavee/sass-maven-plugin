@@ -29,7 +29,7 @@
         <compass.version>0.12.2</compass.version>
         <inotify.version>0.8.8</inotify.version>
         <fsevent.version>0.9.3</fsevent.version>
-        <jruby.version>9.3.3.0</jruby.version>
+        <jruby.version>9.3.3.0</jruby.version>   <!--jruby version changed-->
     </properties>
     
     <dependencies>
@@ -143,7 +143,7 @@
                             </goals>
                           </pluginExecutionFilter>
                           <action>
-                            <ignore />
+                            <ignore>true</ignore>
                           </action>
                         </pluginExecution>
                       </pluginExecutions>

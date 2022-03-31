@@ -89,7 +89,7 @@ public abstract class AbstractSassMojo extends AbstractMojo {
      * gems into ${project.build.directory}/rubygems and a gemPath pointed to this
      * directory. Finally, individual gems can be loaded via the &lt;gems> configuration.
      *
-     * @parameter default-value="${project.build.directory}\\rubygems"
+     * @parameter default-value="${project.build.directory}/rubygems"
      */
     protected String[] gemPaths = new String[0];
 
@@ -153,7 +153,6 @@ public abstract class AbstractSassMojo extends AbstractMojo {
      * @parameter default-value="${basedir}/src/main/webapp" 
      * @required
      */
-    @Parameter(property="sassSourceDirectory")
     protected File sassSourceDirectory;
     
     /**
@@ -163,7 +162,6 @@ public abstract class AbstractSassMojo extends AbstractMojo {
      *
      * @parameter
      */
-    @Parameter(property="includes")
     protected String[] includes = new String[] { "**/scss" };
  
     /**
@@ -171,7 +169,6 @@ public abstract class AbstractSassMojo extends AbstractMojo {
      *
      * @parameter
      */
-    @Parameter(property="excludes")
     protected String[] excludes;
     
     /**
